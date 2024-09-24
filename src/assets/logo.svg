@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.4 158.16">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #4e382c;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        font-family: MontserratRoman-Medium, Montserrat;
+        font-size: 24px;
+        font-variation-settings: 'wght' 500;
+        font-weight: 500;
+      }
+
+      .cls-3 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="OBJECTS">
+    <g>
+      <g>
+        <path class="cls-1" d="m11.52,46.63h141.36c2.9,0,5.27,1.74,5.27,3.86v63.17c0,2.12-2.37,3.86-5.27,3.86l-69.02,4.35c-1.81.19-3.65.18-5.46,0l-66.88-4.34c-2.9,0-5.27-1.74-5.27-3.86v-63.17c0-2.12,2.37-3.86,5.27-3.86Z"/>
+        <g>
+          <g>
+            <path class="cls-1" d="m82.2,113.58s31.48-11.53,68.41-2.3V41.75s-36.85-23.9-68.41,0v71.84Z"/>
+            <path class="cls-1" d="m82.2,111.31s21.88-17.87,51.84-14.43V25.89s-30.06-11.23-51.84,13.58v71.84Z"/>
+            <path class="cls-1" d="m82.2,111.81s12.28-24.21,35.27-26.56V12.81s-23.27,1.45-35.27,27.16v71.84Z"/>
+            <path class="cls-1" d="m82.2,113.58s2.68-30.55,18.7-38.7V1s-16.47,14.12-18.7,40.75v71.84Z"/>
+          </g>
+          <g>
+            <path class="cls-1" d="m82.2,113.58s-31.48-11.53-68.41-2.3V41.75s36.85-23.9,68.41,0v71.84Z"/>
+            <path class="cls-1" d="m82.2,111.31s-21.88-17.87-51.84-14.43V25.89s30.06-11.23,51.84,13.58v71.84Z"/>
+            <path class="cls-1" d="m82.2,111.81s-12.28-24.21-35.27-26.56V12.81s23.27,1.45,35.27,27.16v71.84Z"/>
+            <path class="cls-1" d="m82.2,113.58s-2.68-30.55-18.7-38.7V1s16.47,14.12,18.7,40.75v71.84Z"/>
+          </g>
+        </g>
+      </g>
+      <text class="cls-2" transform="translate(0 151.95)"><tspan x="0" y="0">BOOK </tspan><tspan class="cls-3" x="82.2" y="0">ST</tspan><tspan class="cls-4" x="110.71" y="0">ORE</tspan></text>
+    </g>
+  </g>
+</svg>

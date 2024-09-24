@@ -1,0 +1,16 @@
+nav{
+    background-color: #4E382C;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+.brand{
+    width: 80px;
+}
+.categorias{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
