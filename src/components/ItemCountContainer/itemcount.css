@@ -1,0 +1,13 @@
+.addtoCartWidget{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.contador{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.contador button{
+    padding: 5px 10px;
+}

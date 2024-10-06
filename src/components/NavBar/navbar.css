@@ -1,12 +1,12 @@
-nav{
+body .navbar{
     background-color: #4E382C;
     display: flex;
-    color: white;
+    color: black;
     justify-content: space-between;
     align-items: center;
     padding: 20px 60px;
 }
-.brand{
+.navbar-brand{
     width: 80px;
 }
 .categorias{
