@@ -1,20 +1,6 @@
-import { useState } from "react";
-import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
+import { Link } from "react-router-dom";
 
 const Item = ({ product }) => {
-    const [selectedProduct, setSelectedProduct] = useState(null);
-
-    const showDetail = () => {
-        setSelectedProduct(product); 
-        const modalElement = document.getElementById('infomodal');
-        if (modalElement) {
-            const modal = new bootstrap.Modal(modalElement);
-            modal.show();
-        } else {
-            console.error("El modal no fue encontrado");
-        }
-    };
-
     return (
         <div className="item col h-100">
             <div className="card">
@@ -25,10 +11,7 @@ const Item = ({ product }) => {
                     <h4 className="card-title">{product.title}</h4>
                     <p>precio: {product.price}</p>
                     <p>genero: {product.genre}</p>
-                    {/* Cambiamos para pasar la referencia de la función, no la invocación */}
-                    <button className="btn btn-primary" onClick={showDetail}>Ver producto</button>
-                    {/* El contenedor del modal */}
-                    <ItemDetailContainer product={selectedProduct} />
+                    <Link className="btn btn-primary" to={`/product/${product.id}`}>Ver producto</Link>
                 </div>
             </div>
         </div>
