@@ -9,8 +9,8 @@ const Item = ({ product }) => {
                 </div>
                 <div className="card-body">
                     <h4 className="card-title">{product.title}</h4>
-                    <p>precio: {product.price}</p>
-                    <p>genero: {product.genre}</p>
+                    <p>Precio: {product.price}</p>
+                    <p>Género: {product.genre}</p>
                     <Link className="btn btn-primary" to={`/product/${product.id}`}>Ver producto</Link>
                 </div>
             </div>
