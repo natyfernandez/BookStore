@@ -3,7 +3,7 @@ import CartWidget from './CartWidget'
 import { Link } from 'react-router-dom'
 import './navbar.css'
 
-const NavBar = ({ countCart }) => {
+const NavBar = ( ) => {
     return (
         <header>
             <nav className="navbar navbar-expand-lg bg-body-tertiary px-5 py-4">
@@ -40,7 +40,7 @@ const NavBar = ({ countCart }) => {
                             <input className="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
                             <button className="btn btn-outline-success" type="submit">Buscar</button>
                         </form>
-                        <CartWidget countCart={countCart} />
+                        <CartWidget />
                     </div>
                 </div>
             </nav>

@@ -3,10 +3,10 @@ import { FiPlus } from "react-icons/fi";
 import { LuMinus } from "react-icons/lu";
 import './itemCount.css';
 
-const ItemCount = ({ addToCart, stock }) => {
+const ItemCount = ({ stock , addProduct }) => {
     const [countUnits, setCountUnits] = useState(1);
 
-    const aumentar = () => {
+    const handleClickIncrement = () => {
         if (countUnits < stock) {
             setCountUnits(countUnits + 1);
         } else {
@@ -14,25 +14,21 @@ const ItemCount = ({ addToCart, stock }) => {
         }
     };
 
-    const disminuir = () => {
+    const handleClickDecrement = () => {
         if (countUnits > 1) {
             setCountUnits(countUnits - 1);
         }
     };
 
-    const handleAddToCart = () => {
-        addToCart(countUnits);
-    };
-
     return (
         <div className="addtoCartWidget">
             <div className="countUnits">
-                <button onClick={disminuir}><LuMinus /></button>
+                <button onClick={handleClickDecrement}><LuMinus /></button>
                 <p>{countUnits}</p>
-                <button onClick={aumentar}><FiPlus /></button>
+                <button onClick={handleClickIncrement}><FiPlus /></button>
             </div>
-            <button onClick={handleAddToCart}>Agregar al carrito</button>
-            <p>Stock disponible: {stock}</p> {/* Mostrar el stock disponible */}
+            <button onClick={ () => addProduct(countUnits) }>Agregar al carrito</button>
+            <p>Stock disponible: {stock}</p>
         </div>
     );
 };

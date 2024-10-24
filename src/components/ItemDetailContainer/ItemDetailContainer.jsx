@@ -7,6 +7,11 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
     const { idProduct } = useParams()
 
+    const addProduct = (countUnits) => {
+        const productCart = { ...product, quantity: countUnits }
+        console.log(productCart)
+    }
+
     useEffect(() => {
         getProduct(idProduct)
             .then((data) => setProduct(data))
@@ -17,20 +22,9 @@ const ItemDetailContainer = () => {
     }, [idProduct])
 
     return (
-        <div className="itemlistcontainer container-xxl px-5 py-4">
-            <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-                <div className="col">
-                    {product ? (
-                        <img src={product.image} alt={product.title} className="img-fluid" />
-                    ) : (
-                        <p>Cargando imagen...</p>
-                    )}
-                </div>
-                <div className="col info">
-                    {product ? <ItemDetail product={product} /> : <p>Cargando detalles...</p>}
-                </div>
-            </div>
-        </div>
+        <>
+            <ItemDetail product={product} addProduct={addProduct} />
+        </>
     );
 };
 
