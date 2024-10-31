@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import ItemCount from './../ItemCountContainer/ItemCount';
 
-const ItemDetail = ({ product , addProduct }) => {
+const ItemDetail = ({ product , addProduct, hideItemCount }) => {
     return (
         <div className="itemlistcontainer container-xxl px-5 py-4">
             <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
@@ -23,7 +24,13 @@ const ItemDetail = ({ product , addProduct }) => {
                             <p>Editorial: {product.editorial}</p>
                             <p>Idioma: {product.idiom}</p>
                             <p>Fecha de publicación: {product.publication}</p>
-                            <ItemCount stock={product.stock} addProduct={addProduct} /> 
+                            {
+                                hideItemCount === true ? (
+                                    <Link to="/cart">Terminar compra</Link>
+                                ) : (
+                                    <ItemCount stock={product.stock} addProduct={addProduct} /> 
+                                )
+                            }
                         </div>
                     ) : (
                         <p>Cargando detalles...</p>
