@@ -6,18 +6,16 @@ import './itemCount.css';
 const ItemCount = ({ stock , addProduct }) => {
     const [countUnits, setCountUnits] = useState(1);
 
-    const handleClickIncrement = () => {
-        if (countUnits < stock) {
-            setCountUnits(countUnits + 1);
-        } else {
-            alert(`El stock disponible es de ${stock} unidades`);
-        }
-    };
-
     const handleClickDecrement = () => {
         if (countUnits > 1) {
             setCountUnits(countUnits - 1);
         }
+    };
+
+    const handleClickIncrement = () => {
+        if (countUnits < stock) {
+            setCountUnits(countUnits + 1);
+        } 
     };
 
     return (

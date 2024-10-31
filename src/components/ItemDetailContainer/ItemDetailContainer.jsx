@@ -2,14 +2,17 @@ import { useState, useEffect } from "react";
 import { getProduct } from "../../data/data.js";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom"
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext.jsx";
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
+    const { addProductInCart } = useContext(CartContext)
     const { idProduct } = useParams()
 
     const addProduct = (countUnits) => {
         const productCart = { ...product, quantity: countUnits }
-        console.log(productCart)
+        addProductInCart( productCart )
     }
 
     useEffect(() => {
@@ -17,7 +20,6 @@ const ItemDetailContainer = () => {
             .then((data) => setProduct(data))
             .catch((error) => console.error(error))
             .finally(() => {
-                console.log('Finalizo la promesa')
             })
     }, [idProduct])
 
