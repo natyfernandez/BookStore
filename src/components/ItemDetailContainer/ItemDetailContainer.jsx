@@ -1,8 +1,9 @@
 import { useState, useEffect, useContext } from "react";
-import { getProduct } from "../../data/data.js";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom"
 import { CartContext } from "../../context/CartContext.jsx";
+import { doc, getDoc } from "firebase/firestore";
+import db from "../../db/dbFirebase.js";
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState({})
@@ -16,12 +17,17 @@ const ItemDetailContainer = () => {
         setHideItemCount(true)
     }
 
-    useEffect(() => {
-        getProduct(idProduct)
-            .then((data) => setProduct(data))
-            .catch((error) => console.error(error))
-            .finally(() => {
+    const getProducts = () => {
+        const docRef = doc( db, "products", idProduct )
+        getDoc(docRef)
+            .then((dataDb) => {
+                const productDb = { id: dataDb.id, ...dataDb.data() }
+                setProduct(productDb)
             })
+    }
+
+    useEffect(() => {
+        getProducts()
     }, [idProduct])
 
     return (

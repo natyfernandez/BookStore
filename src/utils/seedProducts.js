@@ -1,3 +1,6 @@
+import { addDoc, collection } from "firebase/firestore";
+import db from "../db/dbFirebase.js";
+
 const products = [
     // Ciencia Ficción
     {
@@ -374,22 +377,14 @@ const products = [
     }
 ];
 
-
-const getProducts = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(products)
-        }, 2000)
+const seedProducts = () => {
+    const productsRef = collection(db, "products")
+    products.map(( {id, ...dataProduct } ) => {
+        addDoc(productsRef, dataProduct)
     })
+    return
 }
 
-const getProduct = (idProduct) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const product = products.find((product) => product.id === idProduct)
-            resolve(product)
-        }, 2000)
-    })
-}
+console.log('Productos subidos')
 
-export { getProducts, getProduct }
+seedProducts()
