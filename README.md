@@ -1,6 +1,10 @@
-# React + Vite
+# Bookstore - Tienda de libros
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##Sobre este proyecto
+
+##Dependencias
+
+`firebase` `react-router-dom` `react-icons` `Bootstrap`
 
 Currently, two official plugins are available:
 
