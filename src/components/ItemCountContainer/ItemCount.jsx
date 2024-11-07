@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiPlus } from "react-icons/fi";
 import { LuMinus } from "react-icons/lu";
-import './itemCount.css';
+import './itemcount.css';
 
 const ItemCount = ({ stock , addProduct }) => {
     const [countUnits, setCountUnits] = useState(1);
