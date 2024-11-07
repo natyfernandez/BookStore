@@ -1,8 +1,8 @@
 # Bookstore - Tienda de libros
 
-##Sobre este proyecto
+## Sobre este proyecto
 
-##Dependencias
+## Dependencias
 
 `firebase` `react-router-dom` `react-icons` `Bootstrap`
 
