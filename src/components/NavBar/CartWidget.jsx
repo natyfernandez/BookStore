@@ -9,7 +9,7 @@ const CartWidget = () => {
 
     return (
         <Link to="/cart" className="btn position-relative p-0">
-            <IoCartOutline size={30} color="black" />
+            <IoCartOutline size={30} color="white" />
             {
                 total >= 1 && <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{ total }</span>
             }

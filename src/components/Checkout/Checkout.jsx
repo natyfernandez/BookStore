@@ -7,9 +7,12 @@ import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const [dataForm, setDataForm] = useState({
-    fullname: '',
+    name: '',
+    surname: '',
     phone: '', 
-    email: ''
+    email: '',
+    adress: '',
+    dni: ''
   })
   const [ orderId, setOrderId ] = useState(null)
   const { cart, totalPrice, deleteCart } = useContext(CartContext)
@@ -53,13 +56,13 @@ const Checkout = () => {
   }
 
   return (
-    <div>
+    <div className="container-xxl px-5 py-5">
       {
         orderId ? (
-          <div>
+          <div className="d-flex flex-column justify-content-center align-items-center h-100">
             <h2>Orden enviada exitosamente!</h2>
-            <p>Guarde su número de seguimiento: {orderId} </p>
-            <Link to="/">Volver a inicio</Link>
+            <p className="mt-1">Guarde su número de seguimiento: {orderId} </p>
+            <Link to="/" className="btn btn-primary mt-1" >Volver a inicio</Link>
           </div>
         ) : (
           <FormCheckout dataForm={dataForm} handleChangeInput={handleChangeInput} handleSubmitForm={handleSubmitForm} />

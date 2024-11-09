@@ -19,13 +19,13 @@ const ItemCount = ({ stock , addProduct }) => {
     };
 
     return (
-        <div className="addtoCartWidget">
-            <div className="countUnits">
-                <button onClick={handleClickDecrement}><LuMinus /></button>
-                <p>{countUnits}</p>
-                <button onClick={handleClickIncrement}><FiPlus /></button>
+        <div className="addtoCartWidget d-flex align-items-center">
+            <div className="countUnits d-flex align-items-center">
+                <button className="btn btn-outline-light" onClick={handleClickDecrement}><LuMinus /></button>
+                <p className="mx-4 my-0">{countUnits}</p>
+                <button className="btn btn-outline-light" onClick={handleClickIncrement}><FiPlus /></button>
             </div>
-            <button onClick={ () => addProduct(countUnits) }>Agregar al carrito</button>
+            <button className="btn btn-primary" onClick={ () => addProduct(countUnits) }>Agregar al carrito</button>
             <p>Stock disponible: {stock}</p>
         </div>
     );

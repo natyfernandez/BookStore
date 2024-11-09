@@ -3,14 +3,16 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
+import { SearchProvider } from './context/SearchContext';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
 import './App.css';
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      {/* Envuelve todo con SearchProvider */}
+      <SearchProvider>
         <CartProvider>
           <NavBar />
           <main>
@@ -23,8 +25,8 @@ function App() {
             </Routes>
           </main>
         </CartProvider>
-      </BrowserRouter>
-    </>
+      </SearchProvider>
+    </BrowserRouter>
   );
 }
 

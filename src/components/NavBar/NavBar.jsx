@@ -1,9 +1,17 @@
 import logo from './../../assets/logo.svg'
-import CartWidget from './CartWidget'
-import { Link } from 'react-router-dom'
+import { useContext } from "react"
+import { SearchContext } from "../../context/SearchContext";
+import { Link } from "react-router-dom";
+import CartWidget from './CartWidget';
 import './navbar.css'
 
-const NavBar = ( ) => {
+const NavBar = () => {
+    const { searchTerm, handleSearchChange } = useContext(SearchContext);
+
+    const handleInputChange = (e) => {
+        handleSearchChange(e.target.value);
+    };
+
     return (
         <header>
             <nav className="navbar navbar-expand-lg bg-body-tertiary px-5 py-4">
@@ -20,32 +28,35 @@ const NavBar = ( ) => {
                                 <Link className="nav-link" to="/category/Romance">Romance</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to=
-                                "/category/Comedia">Comedia</Link>
+                                <Link className="nav-link" to="/category/Comedia">Comedia</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to=
-                                "/category/Ciencia Ficción">Ciencia Ficción</Link>
+                                <Link className="nav-link" to="/category/Ciencia Ficción">Ciencia Ficción</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to=
-                                "/category/Misterio">Misterio</Link>
+                                <Link className="nav-link" to="/category/Misterio">Misterio</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to=
-                                "/category/Drama">Drama</Link>
+                                <Link className="nav-link" to="/category/Drama">Drama</Link>
                             </li>
                         </ul>
                         <form className="d-flex me-3" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Buscar</button>
+                            <input
+                                className="form-control me-2"
+                                type="search"
+                                placeholder="Buscar..."
+                                aria-label="Search"
+                                value={searchTerm}
+                                onChange={handleInputChange}
+                            />
+                            <Link to="/" className="btn btn-primary" type="submit">Buscar</Link>
                         </form>
                         <CartWidget />
                     </div>
                 </div>
             </nav>
         </header>
-    )
-}
+    );
+};
 
 export default NavBar;
